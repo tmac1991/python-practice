@@ -25,3 +25,11 @@ rating = int(input("Rating: "))
 ## Recall
 - Can you explain why `"10"` and `10` behave differently?
 - What's the difference between the label `artist` and the value `"Gucci Mane"`?
+
+### Interactive CLI Menus
+
+- **`input()`** returns whatever the user enters as a string. For example, entering `3` returns `"3"`, not the integer `3`.
+- **`if`** evaluates the first condition. If the condition is `True`, Python executes the indented block underneath it. Example: `if choice == "1":`
+- **`elif`** evaluates an additional condition only if the preceding `if` and `elif` conditions were false. If true, its indented block executes.
+- **`else`** executes when none of the preceding conditions are true. It is commonly used to handle invalid menu selections.
+- **String comparisons:** Because `input()` returns a string, menu selections should be compared against strings such as `"1"` and `"2"`, rather than integers like `1` and `2`.
