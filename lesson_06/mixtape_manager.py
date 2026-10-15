@@ -1,4 +1,4 @@
-#6J- - Variables, Keys, and Creating Dictionaries
+#6J-O - Variables, Keys, Persistent storage, json, and Creating Dictionaries
 
 import json
 
@@ -6,10 +6,18 @@ import json
 # new_mixtape = {} → Creates a dictionary, represented by curly braces.
 # mixtapes.append(new_mixtape) → Puts the dictionary inside the list.
 
-## mixtapes = []
-
-with open("mixtapes.json", "r") as file: # <-replaces the mixtapes list for 6M (load, new inputs, append, save)
-    mixtapes = json.load(file)
+#! with open("mixtapes.json", "r") as file: 
+#!     mixtapes = json.load(file)  
+try:
+    with open("mixtapes.json", "r") as file:
+        mixtapes = json.load(file)
+except FileNotFoundError:
+    mixtapes = []    
+# except json.JSONDecodeError:
+#     print("SWOUP! This JSON is more fucked up than DJ Paul's hand!")    
+except json.JSONDecodeError:
+    print("SWOUP! This JSON is corrupted!")
+    raise
 
 artist = input("Enter artist name: ")
 title = input("Enter album title: ")
