@@ -1,10 +1,15 @@
-#6J - Variables, Keys, and Creating Dictionaries
+#6J- - Variables, Keys, and Creating Dictionaries
+
+import json
 
 # mixtapes = [] → Creates a list, represented by square brackets.
 # new_mixtape = {} → Creates a dictionary, represented by curly braces.
 # mixtapes.append(new_mixtape) → Puts the dictionary inside the list.
 
-mixtapes = []
+## mixtapes = []
+
+with open("mixtapes.json", "r") as file: # <-replaces the mixtapes list for 6M (load, new inputs, append, save)
+    mixtapes = json.load(file)
 
 artist = input("Enter artist name: ")
 title = input("Enter album title: ")
@@ -19,3 +24,7 @@ new_mixtape = {
 mixtapes.append(new_mixtape)
 
 print(mixtapes)
+
+with open("mixtapes.json", "w") as file:
+    json.dump(mixtapes, file, indent=4)
+    
