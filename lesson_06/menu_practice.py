@@ -21,8 +21,11 @@ while True:
 
     if choice == "1":
         print("Viewing saved mixtapes...")
-        for mixtape in mixtapes:
-            print(f"Artist: {mixtape['artist']} | Album: {mixtape['title']} | Rating: {mixtape['rating']}")
+        if not mixtapes:
+            print("No mixtapes saved yet!")
+        else:
+            for mixtape in mixtapes:
+                print(f"Artist: {mixtape['artist']} | Album: {mixtape['title']} | Rating: {mixtape['rating']}")
     elif choice == "2":
         print("Adding a new mixtape...")
     elif choice == "3":

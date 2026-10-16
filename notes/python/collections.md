@@ -31,3 +31,10 @@ print(mixtapes[0]["artist"])
 - `for mixtape in mixtapes:` means: mixtape is a temporary variable, mixtapes is the list where our json is stored. go through the mixtapes list one item at a time, calling each item mixtape
 - `mixtape["artist"]` retrieves: the value stored under the "artist" key in that mixtape’s dictionary.
 - An f-string is useful here because: An f-string is useful here because it allows us to insert values retrieved from dictionaries into a readable, formatted string.
+
+### Empty Collections and Truthiness
+
+- An empty list evaluates to: `False` in a condition (it is "falsy").
+- A nonempty list evaluates to: `True` in a condition (it is "truthy").
+- `if not mixtapes:` means: run the indented code when `mixtapes` is empty.
+- Why checking for an empty list is useful: it lets a program handle the no-data case, such as telling the user there are no mixtapes to display instead of trying to process or display any.
