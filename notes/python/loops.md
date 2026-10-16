@@ -40,6 +40,6 @@ Indentation determines which code belongs to which loop. If the search loop is o
 
 ### Interactive Menu Loops
 
-- `while True`: a type of loop that continues to execute indefinitely because of the boolean True.
-- `break`: responsible for ending the while loop, when the user inputs 4 in this case.
-- Why a menu needs both: The lack of break leads to a menu that can't be exited. The lack of while True only allows one input.
+- `while True`: A loop that continues executing indefinitely because its condition is always `True`.
+- `break`: Immediately exits the nearest enclosing loop. In our menu, it runs when the user selects option `"4"`.
+- Why our menu uses both: `while True` allows the user to make multiple selections without restarting the program. `break` provides a way to exit the loop when the user is finished.
