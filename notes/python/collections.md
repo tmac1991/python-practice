@@ -24,3 +24,10 @@ print(mixtapes[0]["artist"])
 ## Recall
 - Why does `print(mixtapes)` show `[]` around dictionaries?
 - What happens if a rating is the string `"10"` and you compare it to integer `9` with `>=`?
+
+### Iterating Through Lists of Dictionaries
+
+- A list of dictionaries is: multiple dictionaries in the same collection. 
+- `for mixtape in mixtapes:` means: mixtape is a temporary variable, mixtapes is the list where our json is stored. go through the mixtapes list one item at a time, calling each item mixtape
+- `mixtape["artist"]` retrieves: the value stored under the "artist" key in that mixtape’s dictionary.
+- An f-string is useful here because: An f-string is useful here because it allows us to insert values retrieved from dictionaries into a readable, formatted string.

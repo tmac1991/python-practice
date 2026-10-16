@@ -28,3 +28,11 @@ Load old albums **before** appending a new one. Otherwise starting with `mixtape
 
 ## Path gotcha #review
 Relative names like `"mixtapes.json"` are resolved against your terminal's **current working directory**, not necessarily the script's directory. Run `pwd` to check where you are. Later, learn `pathlib` for script-relative paths.
+
+### Loading JSON Before a Menu Loop
+
+Loading JSON before `while True` reads the saved data once when
+the program starts, rather than rereading it after every menu selection.
+
+Relative file paths are resolved from the current working directory,
+not automatically from the location of the Python script.

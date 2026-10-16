@@ -1,3 +1,14 @@
+import json
+
+try:
+    with open("lesson_06/mixtapes.json", "r") as file:
+        mixtapes = json.load(file)
+except FileNotFoundError:
+    mixtapes = []
+except json.JSONDecodeError:
+    print("ERROR: Mixtape data is corrupted!")
+    raise
+
 while True:
     print("""PYTHON MIXTAPE MANAGER
     1. View saved mixtapes
@@ -10,6 +21,8 @@ while True:
 
     if choice == "1":
         print("Viewing saved mixtapes...")
+        for mixtape in mixtapes:
+            print(f"Artist: {mixtape['artist']} | Album: {mixtape['title']} | Rating: {mixtape['rating']}")
     elif choice == "2":
         print("Adding a new mixtape...")
     elif choice == "3":
