@@ -11,3 +11,9 @@
 - **Git letters looked like errors:** `M` and `U` are file-status indicators, not warnings.
 
 When you hit a new bug, record: **symptom → cause → fix → how to detect it next time**.
+
+### Empty or Corrupted JSON Files
+
+- Why an empty JSON file causes `JSONDecodeError`: There is no data in the JSON file to read. An empty file contains no valid JSON data for Python to decode.
+- What opening a file with `"w"` does: Opens a file for writing, immediately erasing its existing contents. If the file doesn't exist, Python creates it.
+- How a backup can prevent data loss: A backup preserves an earlier copy of the data, allowing recovery if the original file is accidentally overwritten, emptied, or corrupted.

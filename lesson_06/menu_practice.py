@@ -28,6 +28,18 @@ while True:
                 print(f"Artist: {mixtape['artist']} | Album: {mixtape['title']} | Rating: {mixtape['rating']}")
     elif choice == "2":
         print("Adding a new mixtape...")
+        artist = input("Enter artist name: ")
+        title = input("Enter album name: ")
+        rating = int(input("Enter rating: "))
+        new_mixtape = {
+            "artist": artist,
+            "title": title,
+            "rating": rating
+        }
+        mixtapes.append(new_mixtape)
+        with open("lesson_06/mixtapes.json", "w") as file:
+            json.dump(mixtapes, file, indent=4)
+        print(new_mixtape)
     elif choice == "3":
         print("Searching by artist...")
     elif choice == "4":
