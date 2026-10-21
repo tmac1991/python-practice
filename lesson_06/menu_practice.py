@@ -26,6 +26,7 @@ while True:
         else:
             for mixtape in mixtapes:
                 print(f"Artist: {mixtape['artist']} | Album: {mixtape['title']} | Rating: {mixtape['rating']}")
+    
     elif choice == "2":
         print("Adding a new mixtape...")
         artist = input("Enter artist name: ")
@@ -40,8 +41,22 @@ while True:
         with open("lesson_06/mixtapes.json", "w") as file:
             json.dump(mixtapes, file, indent=4)
         print(new_mixtape)
+    
     elif choice == "3":
         print("Searching by artist...")
+        search_artist = input("Enter artist name: ")
+        print(f"Searching for: {search_artist}")
+        found = False
+
+        for mixtape in mixtapes:
+            if search_artist == mixtape["artist"]:
+                print(f"Artist: {mixtape['artist']} | Album: {mixtape['title']} | Rating: {mixtape['rating']}")
+                found = True
+
+        if not found:
+            print(f"No mixtapes found for {search_artist}")
+                
+                 
     elif choice == "4":
         print("Goodbye!")
         break
