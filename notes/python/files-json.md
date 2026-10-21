@@ -36,3 +36,41 @@ the program starts, rather than rereading it after every menu selection.
 
 Relative file paths are resolved from the current working directory,
 not automatically from the location of the Python script.
+
+## RSS Feeds and HTTP Requests
+
+### RSS Feeds
+
+RSS (Really Simple Syndication) lets programs retrieve
+updates and articles from websites automatically.
+
+Python libraries:
+- feedparser: Parses RSS and Atom feeds.
+- requests: Downloads web content using HTTP.
+
+Example:
+- requests.get(url, timeout=10) retrieves a feed.
+- feedparser.parse(response.content) parses the downloaded data.
+- feed.entries contains the articles.
+- article.title retrieves an article's headline.
+
+### HTTP Requests and Error Handling
+
+Common HTTP status codes:
+- 200: Success
+- 404: Resource not found
+- 429: Too many requests
+- 500: Internal server error
+- 502: Bad gateway
+
+Error handling:
+- try: Runs code that might fail.
+- except: Catches specific exceptions.
+- else: Runs only if no exception occurs.
+- requests.exceptions.Timeout: Catches request timeouts.
+- requests.exceptions.ConnectionError: Catches connection failures.
+
+Useful checks:
+- response.status_code == 200: HTTP request succeeded.
+- not feed.bozo: RSS parsing succeeded.
+- timeout=10: Limits how long requests waits for network activity.
