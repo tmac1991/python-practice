@@ -38,3 +38,51 @@ print(mixtapes[0]["artist"])
 - A nonempty list evaluates to: `True` in a condition (it is "truthy").
 - `if not mixtapes:` means: run the indented code when `mixtapes` is empty.
 - Why checking for an empty list is useful: it lets a program handle the no-data case, such as telling the user there are no mixtapes to display instead of trying to process or display any.
+
+## Python Syntax Cheat Sheet — (), [], {}
+
+### Parentheses () — CALL functions and methods
+
+print("Hello")
+len(articles)
+articles.append(article_data)
+feed.get("status")
+
+### Square Brackets [] — ACCESS items
+
+article["link"]      # Dictionary key
+article["title"]     # Dictionary key
+articles[0]          # First list item
+articles[:5]         # First 5 list items
+
+### Curly Braces {} — CREATE dictionaries and sets
+
+article = {
+    "title": "Python News",
+    "link": "https://example.com"
+}
+
+### Common Mistakes
+
+❌ article("link")      # Tries to call a dictionary
+✅ article["link"]      # Accesses dictionary value
+
+❌ articles.append{article}
+✅ articles.append(article)
+
+❌ feed.get["status"]
+✅ feed.get("status")
+
+### Memory Trick
+
+() = DO something (call)
+[] = GET something (access)
+{} = BUILD something (dictionary/set)
+
+REMEMBER:
+A dictionary is accessed with [].
+A method is called with ().
+
+These both work, but behave differently when a key is missing:
+article["link"]       # Raises KeyError if missing
+article.get("link")    # Returns None if missing
