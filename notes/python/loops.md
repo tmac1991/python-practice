@@ -43,3 +43,20 @@ Indentation determines which code belongs to which loop. If the search loop is o
 - `while True`: A loop that continues executing indefinitely because its condition is always `True`.
 - `break`: Immediately exits the nearest enclosing loop. In our menu, it runs when the user selects option `"4"`.
 - Why our menu uses both: `while True` allows the user to make multiple selections without restarting the program. `break` provides a way to exit the loop when the user is finished.
+
+## Counting Items That Match a Condition
+
+relevant_count = 0
+
+for article in fresh_articles:
+    if article["score"] > 0:
+        relevant_count += 1
+
+- Start the counter at 0
+- Loop through the items
+- Check a condition
+- Increase the counter when the condition is true
+
+IMPORTANT:
+Code inside a loop runs each iteration.
+Code outside the loop runs after it finishes.

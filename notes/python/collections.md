@@ -86,3 +86,104 @@ A method is called with ().
 These both work, but behave differently when a key is missing:
 article["link"]       # Raises KeyError if missing
 article.get("link")    # Returns None if missing
+
+### Dictionary Keys — Handling Missing Values
+
+| Code | Missing Key Result |
+|---|---|
+| `article["published"]` | ❌ Raises `KeyError` |
+| `article.get("published")` | Returns `None` |
+| `article.get("published", "Unknown")` | ✅ Returns `"Unknown"` |
+
+**Memory Trick:**
+
+`.get()` is like asking politely. If the key isn't there,
+Python gives you the fallback instead of throwing a fit. 😂
+
+**Remember:**
+- `[]` accesses dictionary keys directly.
+- `.get()` safely retrieves values.
+- The second argument to `.get()` is the fallback value.
+
+## Lists Containing Dictionaries
+
+### Accessing values
+
+fresh_articles[0]["score"]
+
+Breakdown:
+- fresh_articles = List of article dictionaries
+- [0] = First dictionary in the list
+- ["score"] = Value stored under the "score" key
+
+### Common Mistakes
+
+❌ fresh_articles[0].article["score"]
+✅ fresh_articles[0]["score"]
+
+❌ article[score]
+✅ article["score"]
+
+### Adding or Updating Values
+
+article["score"] = score
+
+- "score" = Dictionary key (string)
+- score = Variable containing a number
+
+### Memory Trick
+
+List → Item → Key → Value
+
+[] = ACCESS
+() = CALL
+{} = CREATE
+
+### Safety Check
+
+if fresh_articles:
+    print(fresh_articles[0]["score"])
+
+Always check that a list contains items before using [0].
+
+## Sorting Lists
+
+### Sorting numbers
+
+scores = [3, 1, 5, 2]
+
+scores.sort()
+# [1, 2, 3, 5]
+
+scores.sort(reverse=True)
+# [5, 3, 2, 1]
+
+### Sorting dictionaries by a value
+
+def get_score(article):
+    return article["score"]
+
+fresh_articles.sort(key=get_score, reverse=True)
+
+- .sort() changes the original list
+- key=get_score tells Python which value to sort by
+- reverse=True puts the highest values first
+- get_score has no () because we're passing the function itself
+
+### Lists of Dictionaries
+
+fresh_articles[0]["score"]
+
+- [0] selects the first dictionary
+- ["score"] accesses its score
+
+### Checking Lists
+
+if fresh_articles:
+    # List contains something
+
+if not fresh_articles:
+    # List is empty
+
+if article in fresh_articles:
+    # A specific article exists in the list
